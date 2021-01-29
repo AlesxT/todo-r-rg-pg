@@ -13,4 +13,10 @@
  *= require_tree .
  *= require_self
  */
- //@import "bootstrap";
+ @import "bootstrap";
+
+ .backGg{
+  background: #b35d0c;
+  //filter: blur(8px);
+  //-webkit-filter: blur(8px);
+}

@@ -6,20 +6,21 @@
     <%= csp_meta_tag %>
 
     
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-dark">
-    
+  <body class="backGg">
+    <div class="bg-dark">
     <% if user_signed_in? %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
       <div class="text-light">
         <%= current_user.email %>
         <%= current_user.id %>
-        
-      </div> 
+      </div>
+    </div> 
     <% else %>
       <%= link_to "Sign up", new_user_registration_path, :class => "btn btn-outline-primary" %>
       <%= link_to "Login", new_user_session_path %>

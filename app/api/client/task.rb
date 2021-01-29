@@ -24,15 +24,16 @@ module Client
         #   
         desc 'Update a task.'
         params do
-          requires :name, type: String, desc: 'Your status.'
+          requires :name, type: String, desc: 'Y.'
           requires :id, type: Integer
+          requires :status , type: Boolean
         end
-        put  do
+        put do
           #current_user.tasks.find(params[:id]).update({
           #  name: params[:name]
           #})
           task = current_user.tasks.find(params[:id])
-          task.update(name: params[:name])
+          task.update(name: params[:name], status: params[:status])
           #present task, with: Client::Entities::Task
           present task.project, with: Client::Entities::Project
         end

@@ -1,9 +1,49 @@
 .header {
     //background-color: #845bb3;
-    background: linear-gradient(#6f4c97, #845bb3);
+    background: linear-gradient(#4d7dbb, #375b9d);
     height: 51px;
+    border: 1px solid #315589;
 }
 
 h4 {
     color: #ffffff;
+}
+
+.header:hover {
+    background: linear-gradient(#375b9d, #4d7dbb);
+
+}
+
+.buttH{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testt{
+    background: #ffffff;
+}
+
+.iconH {
+    color: #98b0d2;
+    font-size: 18px;
+  }
+.iconH:hover {
+    color: #e3e6ea;
+    font-size: 24px;
+  }
+
+.iconHc {
+    color: #3b4d6a;
+    font-size: 24px;
+}
+
+.headerText{
+    display: flex;
+    //justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 24px;
+    text-shadow: 0px 1px #000000;
+
 }

@@ -1,0 +1,50 @@
+.taskDiv {
+    background: #ffffff;
+    height: 50px;
+    border-bottom : 1px solid #dee2e6;
+}
+
+h4 {
+    color: #ffffff;
+}
+
+.borderBottom{
+    border-top : 1px solid #dee2e6;
+}
+
+.taskDiv:hover {
+    background: #fcfed5;
+
+}
+
+.buttT{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskText{
+    display: flex;
+    //justify-content: center;
+    align-items: center;
+    color: #969696;
+    border-left: 1px solid #dee2e6;
+    border-right : 1px solid #dee2e6;
+    
+}
+
+.taskDiv:last-child {
+    border-radius: 0% 0% 11px 11px;
+    
+    height: 56px;
+    border: none;
+}
+
+.iconT {
+    color: #999999;
+    font-size: 14px;
+  }
+.iconT:hover {
+    color: #7c7c7c;
+    font-size: 18px;
+  }

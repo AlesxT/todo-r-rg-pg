@@ -64,5 +64,3 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps)(TodoLists)
 //export default TodoLists
-
-//export default TodoLists

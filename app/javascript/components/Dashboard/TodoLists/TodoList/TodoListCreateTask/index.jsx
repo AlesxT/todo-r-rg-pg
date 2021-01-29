@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios'
-import {connect} from 'react-redux'
-import { UPDATE_PROJECT} from '../../../../../actions/actionTypes'
-
+import { connect } from 'react-redux'
+import { UPDATE_PROJECT } from '../../../../../actions/actionTypes'
+import './TodoListCreateTask.scss'
 
 class TodoListCreateTask extends React.Component {
 
@@ -10,45 +10,48 @@ class TodoListCreateTask extends React.Component {
         super(props);
         this.state = {
             taskNew: ''
-          };
+        };
     }
 
-    taskName= (e) => {
+    taskName = (e) => {
         this.setState({
             taskNew: e.target.value
         })
     }
-    
+
     addTask = () => {
         var taskName = this.state.taskNew;
         console.log(taskName);
         console.log(this.props.projectId);
         //console.log(this.props.project.id);
-		//var tasknew = prompt("Please enter your new task");
-		if (taskName!= '') {
-			//console.log(typeof(tasknew));
-			axios.post('/api/tasks/', {
+        //var tasknew = prompt("Please enter your new task");
+        if (taskName != '') {
+            //console.log(typeof(tasknew));
+            axios.post('/api/tasks/', {
                 name: taskName,
                 project_id: this.props.projectId
-			})
-				.then((response) => {
-                    //this.props.dispatch({ type: ADD_PROJECT, project: response.data })
-                    //this.props.dispatch({ type: GET_PROJECTS, projects: response.data })
-                    this.props.dispatch({ type: UPDATE_PROJECT, project: response.data})
-                    
-					console.log("task resp: " + response);
-				}, (error) => {
-					console.log(error);
-				});
-		}
-	}
+            })
+                .then((response) => {
+                    this.props.dispatch({ type: UPDATE_PROJECT, project: response.data })
+                    console.log("task resp: " + response);
+                }, (error) => {
+                    console.log(error);
+                });
+        }
+    }
 
     render() {
         return (
-            <div className="input-group mb-3">
-                <input type="text" onChange={this.taskName} className="form-control" placeholder="Enter here the task you want to add.."/>
-                <div className="input-group-append">
-                    <button className="btn btn-success" type="button" onClick={this.addTask}>Add Task</button>
+            <div name="taskCreate" className="container">
+                <div className="row task">
+                    <div className="col-md-1">
+                    </div>
+                    <div className="input-group col-md">
+                        <input type="text" onChange={this.taskName} className="form-control inputTextBorder" placeholder="Enter here the task you want to add.." />
+                        <div className="input-group-append">
+                            <button className="btn addTaskButton" type="button" onClick={this.addTask}>Add Task</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
@@ -58,9 +61,9 @@ class TodoListCreateTask extends React.Component {
 //export default TodoListCreateTask
 
 /*const mapStateToProps = (state) => {
-	return{
-		projects: state.projects
-	}
+    return{
+        projects: state.projects
+    }
 }*/
 
-export default connect ()(TodoListCreateTask)
+export default connect()(TodoListCreateTask)

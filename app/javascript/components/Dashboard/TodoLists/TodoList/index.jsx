@@ -3,7 +3,6 @@ import React from 'react'
 import TodoListHeader from './TodoListHeader'
 import TodoListCreateTask from './TodoListCreateTask' 
 import TasksLists from './TasksLists' 
-//
 import './TodoList.scss'
 
 class TodoList extends React.Component {

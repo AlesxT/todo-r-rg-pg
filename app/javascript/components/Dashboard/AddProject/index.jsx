@@ -1,9 +1,8 @@
-import React from 'react'
-import axios from 'axios'
-//import styles from './App.module.scss'
-//import Todolists from './TodoLists'
-import {connect} from 'react-redux'
-import {ADD_PROJECT} from '../../../actions/actionTypes'
+import axios from 'axios';
+import React from 'react';
+import './AddProject.scss'
+import { connect } from 'react-redux';
+import { ADD_PROJECT } from '../../../actions/actionTypes';
 
 
 class AddProject extends React.Component {
@@ -45,7 +44,7 @@ class AddProject extends React.Component {
 		console.log(this);
 		var projectnew = prompt("Please enter your new project");
 		if (projectnew != null) {
-			console.log(typeof(projectnew));
+			console.log(typeof (projectnew));
 			axios.post('/api/projects', {
 				name: projectnew
 			})
@@ -88,17 +87,10 @@ class AddProject extends React.Component {
 	render() {
 		return (
 
-			<div><button type="button" className="btn btn-succes mr-2" onClick={this.createProject}>Add todo</button></div>
-
+			<div className="addProjectButtonDiv"><button type="button" className="btn addProjectButton " onClick={this.createProject}>Add TODO List</button></div>
+	
 		)
 	}
 }
 
-/*const mapStateToProps = (state) => {
-	return {
-		projects: state.projects
-	}
-}*/
-
 export default connect()(AddProject)
-//export default AddProject

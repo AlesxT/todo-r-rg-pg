@@ -3,6 +3,8 @@ import React from 'react'
 //import styles from './App.module.scss'
 import TodoLists from './TodoLists'
 import AddProject from './AddProject'
+import TodoListLogo from './TodoListLogo'
+import './Dashboard.scss'
 
 class Dashboard extends React.Component {
 
@@ -12,10 +14,11 @@ class Dashboard extends React.Component {
 
 	render() {
 		return (
-			<>
+			<div className="backG">
+				<TodoListLogo />
 				<TodoLists />
 				<AddProject />
-			</>
+			</div>
 		)
 	}
 }

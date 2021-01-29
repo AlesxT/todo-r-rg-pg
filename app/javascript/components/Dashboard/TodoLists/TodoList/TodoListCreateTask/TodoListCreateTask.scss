@@ -1,0 +1,24 @@
+.addTaskButton {
+    //background-color: #845bb3;
+    background: linear-gradient(#94cbae, #508767);
+    color: #ffffff;
+    text-shadow: 1px 1px #535e58;
+    border: 1px solid #447557;
+    //height: 51px;
+}
+
+.addTaskButton:hover{
+    color: #e4fff0;
+    background: linear-gradient(#7dc9a0, #4a8161);
+}
+
+.task{
+    background: linear-gradient(#e1e1e1, #cccccc);
+    border-bottom: 1px solid #aaaaaa;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.inputTextBorder{
+    border-top: 1px solid #707070;
+}

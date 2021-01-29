@@ -11,11 +11,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-light">
+  <body class="bg-dark">
     
     <% if user_signed_in? %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-      <div>
+      <div class="text-light">
         <%= current_user.email %>
         <%= current_user.id %>
         

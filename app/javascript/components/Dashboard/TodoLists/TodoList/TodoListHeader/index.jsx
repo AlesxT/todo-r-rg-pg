@@ -1,10 +1,9 @@
 import React from 'react'
-//import styles from './App.module.scss'
 import axios from 'axios'
 import './TodoListHeader.scss'
 import {connect} from 'react-redux'
 import {UPDATE_PROJECT, DELETE_PROJECT} from '../../../../../actions/actionTypes'
-//import {TOGGLE_PROJECT, DELETE_PROJECT} from 'action/actionTypes'
+import {FaEdit, FaTrashAlt, FaRegCalendarAlt} from "react-icons/fa";
 
 class TodoListHeader extends React.Component {
 
@@ -13,11 +12,9 @@ class TodoListHeader extends React.Component {
     }
 
     putProject = () => {
-        //let self = this;
-        //var idproject = this.props.project.id;
         console.log(this.props.project.id);
-        var projectput = prompt("Please enter your new name for project");
-        if (projectput != null) {
+        var projectput = prompt("Please enter your new name for project" , this.props.project.name);
+        if (true /*projectput != "" && projectput*/) {
             console.log(projectput);
             axios.put('/api/projects', {
                 name: projectput,
@@ -50,17 +47,17 @@ class TodoListHeader extends React.Component {
 
             <div className="container header">
                 <div className="row h-100">
-                    <div className="col-md-1 text-center border">
-                        <button type="button" className="btn btn-warning">C</button>
+                    <div className="col-md-1 buttH iconHc">
+                        <FaRegCalendarAlt />
                     </div>
-                    <div className="col-md-9 border">
-                        <h4 className="">{this.props.project.id}: {this.props.project.name}</h4>
+                    <div className="col-md-9 headerText">
+                        {this.props.project.id}: {this.props.project.name}
                     </div>
-                    <div className="col-md-1 text-center border">
-                        <button type="button" className="btn btn-warning" onClick={this.putProject}>E</button>
+                    <div className="col-md-1 buttH iconH">
+                        <FaEdit  onClick={this.putProject}/>
                     </div>
-                    <div className="col-md-1 text-center border">
-                        <button type="button" className="btn btn-danger" onClick={this.delProject}>D</button>
+                    <div className="col-md-1 buttH iconH">
+                        <FaTrashAlt onClick={this.delProject}/>
                     </div>
                 </div>
             </div>

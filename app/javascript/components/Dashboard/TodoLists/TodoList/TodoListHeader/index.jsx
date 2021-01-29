@@ -51,7 +51,7 @@ class TodoListHeader extends React.Component {
                         <FaRegCalendarAlt />
                     </div>
                     <div className="col-md-9 headerText">
-                        {this.props.project.id}: {this.props.project.name}
+                        {this.props.project.name}
                     </div>
                     <div className="col-md-1 buttH iconH">
                         <FaEdit  onClick={this.putProject}/>

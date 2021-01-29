@@ -95,7 +95,7 @@ class Task extends React.Component {
 					<input type="checkbox" ref="check" defaultChecked={this.props.task.status} onClick={this.putCheckBox} />
 				</div>
 				<div className="col-md taskText">
-					<span className="">{this.props.task.id}: {this.props.task.name}</span>
+					<span className=""> {this.props.task.name}</span>
 				</div>
 				<div className="col-md-1 buttT iconT ">
 					<FaEdit onClick={this.putTask} />

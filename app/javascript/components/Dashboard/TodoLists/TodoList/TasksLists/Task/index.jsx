@@ -37,14 +37,14 @@ class Task extends React.Component {
 	putTask = () => {
 		//var idproject = this.props.project.id;
 		console.log(this.props.task.project_id, this.props.task.id);
-		var statusTF = this.refs.check.checked
+		//var statusTF = this.refs.check.checked
 		var taskput = prompt("Please enter your new name for task");
 		if (taskput != null) {
 			console.log(taskput);
 			axios.put('/api/tasks', {
 				id: this.props.task.id,
 				name: taskput,
-				status: statusTF
+				status: this.refs.check.checked
 			})
 				.then((response) => {
 					this.props.dispatch({ type: UPDATE_PROJECT, project: response.data })

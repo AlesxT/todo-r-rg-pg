@@ -19,13 +19,14 @@ module Client
           #present task, with: Client::Entities::Task
           #binding.pry
           present task.project, with: Client::Entities::Project
+          #present task, with: Client::Entities::Task
         end
   
         #   
         desc 'Update a task.'
         params do
-          requires :name, type: String, desc: 'Y.'
           requires :id, type: Integer
+          requires :name, type: String, desc: 'Y.'
           requires :status , type: Boolean
         end
         put do
@@ -36,16 +37,18 @@ module Client
           task.update(name: params[:name], status: params[:status])
           #present task, with: Client::Entities::Task
           present task.project, with: Client::Entities::Project
+
         end
   
         #
         desc 'Delete a task.'
         params do
-          requires :id, type: String, desc: 'Task ID.'
+          requires :id, type: Integer, desc: 'Task ID.'
         end
         delete do
           task = current_user.tasks.find(params[:id]).destroy
           present task.project, with: Client::Entities::Project
+          #present task, with: Client::Entities::Task
         end
   
       end

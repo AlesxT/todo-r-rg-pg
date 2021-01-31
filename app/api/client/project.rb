@@ -32,8 +32,8 @@ module Client
       #   
       desc 'Update a project.'
       params do
-        requires :name, type: String, desc: 'Your project.'
         requires :id, type: Integer
+        requires :name, type: String, desc: 'Your project.'
       end
       put do
         project = current_user.projects.find(params[:id])

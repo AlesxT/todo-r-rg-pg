@@ -29,31 +29,31 @@ module Client
         present project, with: Client::Entities::Project
       end
 
-      #   
-      desc 'Update a project.'
-      params do
-        requires :id, type: Integer
-        requires :name, type: String, desc: 'Your project.'
-      end
-      put do
-        project = current_user.projects.find(params[:id])
-        #binding.pry
-        #project = current_user.projects.find(params[:id]).update({
-        project.update(name: params[:name])
-        #})
-        present project, with: Client::Entities::Project
-      end
+      # 
+      route_param :project_id do
+        desc 'Update a project.'
+        params do
+          requires :name, type: String, desc: 'Your project.'
+        end
+        put do
+          project = current_user.projects.find(params[:project_id])
+          #binding.pry
+          #project = current_user.projects.find(params[:id]).update({
+          project.update(name: params[:name])
+          #})
+          present project, with: Client::Entities::Project
+        end
 
-      #
-      desc 'Delete a project.'
-      params do
-        requires :id, type: Integer, desc: 'Project ID.'
+        #
+        desc 'Delete a project.'
+        params do
+          #requires :id, type: Integer, desc: 'Project ID.'
+        end
+        delete do
+          project = current_user.projects.find(params[:project_id]).destroy
+          present project, with: Client::Entities::Project
+        end
       end
-      delete do
-        project = current_user.projects.find(params[:id]).destroy
-        present project, with: Client::Entities::Project
-      end
-
     end
 	end
 end

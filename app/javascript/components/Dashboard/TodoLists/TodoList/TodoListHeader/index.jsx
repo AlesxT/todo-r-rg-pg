@@ -16,13 +16,12 @@ class TodoListHeader extends React.Component {
         var projectput = prompt("Please enter your new name for project" , this.props.project.name);
         if (projectput != "") {
             console.log(projectput);
-            axios.put('/api/projects', {
-                name: projectput,
-                id: this.props.project.id
+            axios.put(`/api/projects/${this.props.project.id}`, {
+                name: projectput
             })
                 .then((response) => {
                     this.props.dispatch({ type: UPDATE_PROJECT, project: response.data})
-                    console.log("lol: " + response);
+                    console.log("lol :) : " + response);
                 }, (error) => {
                     console.log(error);
                 });
@@ -34,7 +33,7 @@ class TodoListHeader extends React.Component {
         const conf = confirm('Are you sure you want to delete the project: ' + this.props.project.name);
         //axios.delete('/api/projects', { data: { id: this.props.project.id } });
         if (conf) {
-            axios.delete('/api/projects', { data: { id: project.id } }).then((response) => {
+            axios.delete(`/api/projects/${this.props.project.id}`).then((response) => {
                 this.props.dispatch({ type: DELETE_PROJECT, projectId: project.id })
                 console.log(response);
             })

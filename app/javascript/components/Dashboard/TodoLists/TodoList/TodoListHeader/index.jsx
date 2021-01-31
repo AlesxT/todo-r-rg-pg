@@ -14,7 +14,7 @@ class TodoListHeader extends React.Component {
     putProject = () => {
         console.log(this.props.project.id);
         var projectput = prompt("Please enter your new name for project" , this.props.project.name);
-        if (true /*projectput != "" && projectput*/) {
+        if (projectput != "") {
             console.log(projectput);
             axios.put('/api/projects', {
                 name: projectput,

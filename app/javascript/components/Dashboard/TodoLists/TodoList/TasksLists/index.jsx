@@ -45,8 +45,8 @@ class TasksLists extends React.Component {
 	render() {
 		return (
 			<div name="tasks" className="container">
-				{this.props.tasks.map((task, i) =>
-					<Task key={i} task={task} />
+				{this.props.tasks.map((task, i) =>(
+					<Task key={i} task={task} />)
 				)}
 			</div>
 		)

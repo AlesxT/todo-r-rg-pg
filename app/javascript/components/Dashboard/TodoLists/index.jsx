@@ -46,10 +46,10 @@ class TodoLists extends React.Component {
 	render() {
 		return (
 			<>
-				{this.props.projects.map((project, i) =>
+				{this.props.projects.map((project, i) => (
 
 					<TodoList key={i} project={project} />
-
+				)
 				)}
 			</>
 		)

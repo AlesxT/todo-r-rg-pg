@@ -1,4 +1,4 @@
-import { GET_PROJECTS, ADD_PROJECT, UPDATE_PROJECT, DELETE_PROJECT, UPDATE_TASK } from '../actions/actionTypes'
+import { GET_PROJECTS, ADD_PROJECT, UPDATE_PROJECT, DELETE_PROJECT } from '../actions/actionTypes'
 
 function projectsReducer(state = [], action) {
 	switch (action.type) {

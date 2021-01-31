@@ -12,15 +12,15 @@ class Task extends React.Component {
 	}
 
 	putTask = () => {
-		console.log(this.props.task.project_id, this.props.task.id);
-		var statusTF = this.refs.check.checked;
-		var taskput = prompt("Please enter your new name for task");
+		//console.log(this.props.task.project_id, this.props.task.id);
+		//var statusTF = this.refs.check.checked;
+		var taskput = prompt("Please enter your new name for " + this.props.task.name, this.props.task.name);
 		if (taskput != null) {
 			console.log(taskput);
-			axios.put('/api/tasks', {
-				id: this.props.task.id,
-				name: taskput,
-				status: statusTF
+			axios.put(`/api/tasks/${this.props.task.id}`, {
+			
+				name: taskput
+				//status: statusTF
 			})
 				.then((response) => {
 					this.props.dispatch({ type: UPDATE_PROJECT, project: response.data })
@@ -35,9 +35,9 @@ class Task extends React.Component {
 		//const {project} = this.props
 		const conf = confirm('Are you sure you want to delete tasks: ' + this.props.task.name);
 		if (conf) {
-			axios.delete('/api/tasks', { data: { id: this.props.task.id } }).then((response) => {
+			//axios.delete('/api/tasks', { data: { id: this.props.task.id } }).then((response) => {
+			axios.delete(`/api/tasks/${this.props.task.id}`).then((response) => {
 				this.props.dispatch({ type: UPDATE_PROJECT, project: response.data })
-
 				console.log(response);
 			})
 		}
@@ -48,13 +48,13 @@ class Task extends React.Component {
 		//console.log(this.refs.check.checked);
 		//console.log("status: " + statusTFf + " Type: " + typeof (statusTFf));
 		//if (true) {
-			axios.put('/api/tasks', {
-				id: this.props.task.id,
-				name: this.props.task.name,
+			axios.put(`/api/tasks/${this.props.task.id}`, {
+				//id: this.props.task.id,
+				//name: this.props.task.name,
 				status: statusTFf 
 			})
 				.then((response) => {
-					//this.props.dispatch({ type: UPDATE_PROJECT, project: response.data })
+					this.props.dispatch({ type: UPDATE_PROJECT, project: response.data })
 					console.log(response);
 				}, (error) => {
 					console.log(error);

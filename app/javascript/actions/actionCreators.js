@@ -16,6 +16,6 @@ export function deleteProject(index) {
   return { type: DELETE_PROJECT, index: index }
 }
 
-/*export function updateTask(index) {
+export function updateTask(index) {
   return { type: UPDATE_TASK, index: index }
-}*/
+}

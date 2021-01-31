@@ -21,7 +21,7 @@ class TodoListHeader extends React.Component {
             })
                 .then((response) => {
                     this.props.dispatch({ type: UPDATE_PROJECT, project: response.data})
-                    console.log("lol :) : " + response);
+                    console.log("lol :] " + response);
                 }, (error) => {
                     console.log(error);
                 });

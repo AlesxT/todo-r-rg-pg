@@ -13,10 +13,10 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: alexm
-  password:
-  host: localhost
-
+  #username: alexm
+  #password:
+  #host: localhost
+#
 development:
   <<: *default
   database: todolist_react_rg_development

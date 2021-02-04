@@ -17,7 +17,7 @@ default: &default
   #password:
   #host: localhost
   #
-  
+
 development:
   <<: *default
   database: todolist_react_rg_development

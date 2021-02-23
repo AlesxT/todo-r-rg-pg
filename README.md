@@ -1,26 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version
+Ruby 2.7.2
 
-Things you may want to cover:
+## Configuration
+gems:
+grape
+grape-entity
+react-rails
+devise
+bootstrap
+pg
 
-* Ruby version
+npm:
+react
+react-redux
+axios
 
-* System dependencies
+## Database 
+PostgreSQL
 
-* Configuration
+## Example
+https://todo-r-rg-pg-heroku.herokuapp.com/
 
-* Database creation
+# todo-r-rg-pg
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# todo-r-rg
-# todo-r-g

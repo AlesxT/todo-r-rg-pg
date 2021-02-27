@@ -1,6 +1,6 @@
 .taskDiv {
     background: #ffffff;
-    height: 50px;
+    min-height: 50px;
     border-bottom : 1px solid #dee2e6;
 }
 
@@ -36,7 +36,7 @@ h4 {
 .taskDiv:last-child {
     border-radius: 0% 0% 11px 11px;
     
-    height: 56px;
+    min-height: 56px;
     border: none;
 }
 
